@@ -24,7 +24,7 @@ Send me your changes via pull-request.
 
 # License
 
-GPLv3
+GPLv2
 
 # Authors
 
