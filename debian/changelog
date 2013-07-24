@@ -1,0 +1,5 @@
+nagios-check-http-header (0.0.1) unstable; urgency=low
+
+  * Packaged as debian package
+
+ -- Sven Mueller <skanky@gmx.de>  WED, 24 Aug 2013 15:02:00 +0100

@@ -1,0 +1,5 @@
+*~
+.\#*
+debian/nagios-check-http-header.*
+debian/nagios-check-http-header
+debian/files

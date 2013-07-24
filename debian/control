@@ -1,0 +1,11 @@
+Source: nagios-check-http-header
+Maintainer: Sven Mueller <skanky@gmx.de>
+Section: misc
+Priority: optional
+Standards-Version: 2.0.1
+Build-Depends: debhelper (>= 8), Getopt::Std, WWW::Curl::Easy
+
+Package: nagios-check-http-header
+Architecture: all
+Depends: ${perl:Depends}, ${misc:Depends}, nagios-plugins
+Description: Nagios response HTTP header check

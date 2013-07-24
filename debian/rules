@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p $$(pwd)/debian/nagios-check-http-header/usr/lib/nagios/plugins
+	cp check_http_header.pl $$(pwd)/debian/nagios-check-http-header/usr/lib/nagios/plugins
+
+	mkdir -p $$(pwd)/debian/nagios-check-http-header/etc/nagios-plugins/config/
+	cp check_http_header.cfg $$(pwd)/debian/nagios-check-http-header/etc/nagios-plugins/config/
