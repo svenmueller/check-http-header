@@ -3,9 +3,9 @@ Maintainer: Sven Mueller <skanky@gmx.de>
 Section: misc
 Priority: optional
 Standards-Version: 2.0.1
-Build-Depends: debhelper (>= 8), libwww-curl-perl
+Build-Depends: debhelper (>= 8)
 
 Package: nagios-check-http-header
 Architecture: all
-Depends: ${perl:Depends}, ${misc:Depends}, nagios-plugins
+Depends: ${perl:Depends}, ${misc:Depends}, nagios-plugins, libwww-curl-perl
 Description: Nagios response HTTP header check
