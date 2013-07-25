@@ -3,7 +3,7 @@ Maintainer: Sven Mueller <skanky@gmx.de>
 Section: misc
 Priority: optional
 Standards-Version: 2.0.1
-Build-Depends: debhelper (>= 8), Getopt::Std, WWW::Curl::Easy
+Build-Depends: debhelper (>= 8), libwww-curl-perl
 
 Package: nagios-check-http-header
 Architecture: all
