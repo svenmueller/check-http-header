@@ -9,14 +9,13 @@ This code is based on an existing Nagios plugin: http://exchange.nagios.org/dire
 ## As file
 
 ```
-gem install excon
-cp check_http_header.rb /usr/lib/nagios/plugins
+<TODO install dependecies>
+cp check_http_header.pl /usr/lib/nagios/plugins
 ```
 
 ## As Debian package
 
-1. package `excon` as Debian package (use https://github.com/jordansissel/fpm)
-1. `dpkg-buildpackage -b`
+1. `dpkg-buildpackage -b -uc -us`
 
 # Want to improve this?
 
