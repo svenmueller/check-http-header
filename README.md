@@ -4,18 +4,22 @@ A Nagios/Icinga plugin to check http header for text.
 
 This code is based on an existing Nagios plugin: http://exchange.nagios.org/directory/Plugins/Websites,-Forms-and-Transactions/check_http_header/details
 
-# Installation
+# Installation (Ubuntu 12.04)
 
 ## As file
 
 ```
-<TODO install dependecies>
-cp check_http_header.pl /usr/lib/nagios/plugins
+$ apt-get install libwww-curl-perl # install required libs
+$ cp check_http_header.pl /usr/lib/nagios/plugins # copy file to nagios plugin folder
 ```
 
 ## As Debian package
 
-1. `dpkg-buildpackage -b -uc -us`
+```
+$ dpkg-checkbuilddeps # check
+$ apt-get install build-essential debhelper libwww-curl-perl # install required libs
+$ dpkg-buildpackage -b -uc -us # build debian package
+```
 
 # Want to improve this?
 
