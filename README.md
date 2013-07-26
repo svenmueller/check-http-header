@@ -21,6 +21,12 @@ $ apt-get install build-essential debhelper libwww-curl-perl # install required 
 $ dpkg-buildpackage -b -uc -us # build debian package
 ```
 
+# Example
+
+```
+$ sudo /usr/bin/perl /usr/lib/nagios/plugins/check_http_header.pl -I 'www.domain.de'  -u '/' -r 'Content-Type: text/html;charset=UTF-8' -p 443
+```
+
 # Want to improve this?
 
 Send me your changes via pull-request.
