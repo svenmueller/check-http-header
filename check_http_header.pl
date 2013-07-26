@@ -6,7 +6,7 @@ use WWW::Curl::Easy;
 use Getopt::Std;
 
 my $plugin_name = 'check_http_header';
-my $VERSION             = '0.01';
+my $VERSION             = '0.0.3';
 
 # getopt module config
 $Getopt::Std::STANDARD_HELP_VERSION = 1;
@@ -34,8 +34,11 @@ if (not (defined $opts{I} and defined $opts{r})) {
         my $curl = new WWW::Curl::Easy;
         
         $curl->setopt(CURLOPT_HEADER,1);
-	$curl->setopt(CURLOPT_NOBODY,1);
-	$curl->setopt(CURLOPT_TIMEOUT,$opts{t});
+	    $curl->setopt(CURLOPT_NOBODY,1);
+	    $curl->setopt(CURLOPT_TIMEOUT,$opts{t});
+        # ignore all ssl error by default
+        $curl->setopt(CURLOPT_SSL_VERIFYHOST, 0);
+        $curl->setopt(CURLOPT_SSL_VERIFYPEER, 0);
 
         $curl->setopt(CURLOPT_URL, "$opts{I}:$opts{p}$opts{u}");
 
@@ -90,7 +93,10 @@ sub VERSION_MESSAGE
 {
         print <<EOVM
 $plugin_name v. $VERSION
-Copyright 2010,  KsI  - http://ksimute.trancom.ru - Licensed under GPLv2
+Copyright 2013
+KsI  - http://ksimute.trancom.ru
+Sven Mueller
+Licensed under GPLv2
 
 EOVM
 ;
