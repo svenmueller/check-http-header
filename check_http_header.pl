@@ -6,7 +6,7 @@ use WWW::Curl::Easy;
 use Getopt::Std;
 
 my $plugin_name = 'check_http_header';
-my $VERSION             = '0.0.3';
+my $VERSION             = '0.0.4';
 
 # getopt module config
 $Getopt::Std::STANDARD_HELP_VERSION = 1;
@@ -40,7 +40,10 @@ if (not (defined $opts{I} and defined $opts{r})) {
         $curl->setopt(CURLOPT_SSL_VERIFYHOST, 0);
         $curl->setopt(CURLOPT_SSL_VERIFYPEER, 0);
 
-        $curl->setopt(CURLOPT_URL, "$opts{I}:$opts{p}$opts{u}");
+        my $scheme = (index($opts{I}, "http") != -1)?(""):(($opts{p} && $opts{p} == 443)?"https://":"http://");
+        my $port = $opts{p}?":$opts{p}":"";
+
+        $curl->setopt(CURLOPT_URL, "$scheme$opts{I}$port$opts{u}");
 
         my $response_body;
 
